@@ -90,3 +90,5 @@ nnoremap <buffer> <F9> <ESC>:w<cr> :exec '!python' shellescape(@%, 1)<cr>
 highlight ColorColumn ctermbg=DarkCyan
 call matchadd('ColorColumn', '\%81v', 100)
 call matchadd('ColorColumn', '\%121v', 100)
+
+" adding a comment to test something
