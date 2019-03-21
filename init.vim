@@ -53,7 +53,7 @@ let g:jedi#completions_enabled = 0
 let g:jedi#use_splits_not_buffers = "right"
 
 " setup neo make pylinter
-let g:neomake_python_makers = ['pylin']
+let g:neomake_python_makers = ['pylint']
 call neomake#configure#automake('nrwi', 500)
 
 " highlight yank
@@ -67,4 +67,26 @@ set background=dark
 
 " Default setups
 syntax on
-set nu
+set number
+set relativenumber
+set cursorline
+set list listchars=tab:>\ ,trail:-,eol:¬
+set ruler
+let python_highlight_all=1
+filetype plugin on
+filetype indent on
+set hlsearch "highlight search results
+
+" Abbreviations
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+
+" Run python within nvim
+nnoremap <buffer> <F9> <ESC>:w<cr> :exec '!python' shellescape(@%, 1)<cr>
+
+" add a ruler line, only highlights letters that go that far
+highlight ColorColumn ctermbg=DarkCyan
+call matchadd('ColorColumn', '\%81v', 100)
+call matchadd('ColorColumn', '\%121v', 100)
