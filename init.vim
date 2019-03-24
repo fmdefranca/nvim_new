@@ -22,6 +22,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 """"""""""""""""""""""""""""""
