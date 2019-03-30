@@ -39,6 +39,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:airline_theme='jellybeans'
 
 " mapping keys
+let mapleader = "\<Space>"
 map <Space> <Leader> " remap leader
 inoremap jj <Esc> " remap jj to esc insert mode 
 nmap <c-s> :w<CR>
@@ -77,6 +78,7 @@ let python_highlight_all=1
 filetype plugin on
 filetype indent on
 set hlsearch "highlight search results
+set showcmd
 
 " Abbreviations
 cnoreabbrev Wq wq
