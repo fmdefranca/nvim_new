@@ -95,3 +95,7 @@ call matchadd('ColorColumn', '\%81v', 100)
 call matchadd('ColorColumn', '\%121v', 100)
 
 " adding a comment to test something
+
+" setting nerdtree toggle to F6
+nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+let NERDTreeShowHidden=1 " defaults hidden files to show in nerdtree
