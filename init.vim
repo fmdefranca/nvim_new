@@ -23,6 +23,8 @@ Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 """"""""""""""""""""""""""""""
@@ -46,6 +48,7 @@ nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 nmap <c-q> :q<CR>
 imap <c-q> <Esc>:q<CR>
+nnoremap <F6> :NERDTreeToggle<CR>
 
 " code jumper jedi-vim
 " disable autocompletion, cause we use deoplete for completion
@@ -69,6 +72,7 @@ set background=dark
 
 " Default setups
 syntax on
+set encoding=utf-8
 set number
 set relativenumber
 set cursorline
@@ -96,6 +100,21 @@ call matchadd('ColorColumn', '\%121v', 100)
 
 " adding a comment to test something
 
-" setting nerdtree toggle to F6
-nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
-let NERDTreeShowHidden=1 " defaults hidden files to show in nerdtree
+" Python specific settings
+
+" PEP8 settings
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+    "\ set softtabstop=4
+    "\ set shiftwidth=4
+    "\ set textwidth=79
+    "\ set expandtab
+    "\ set autoindent
+"    \ set fileformat=unix
+
+" HTML, CSS, JS settings
+"au BufNewFile,BufRead *.js, *.html, *.css
+    "\ set tabstop=2
+    ""\ set softtabstop=2
+    "\ set shiftwidth=2
+
